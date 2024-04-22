@@ -7,10 +7,11 @@ from langchain.vectorstores import FAISS
 from langchain.chains import ConversationalRetrievalChain
 from langchain_community.llms import HuggingFaceEndpoint
 import os
-from getpass import getpass
+from dotenv import load_dotenv
 
-HUGGINGFACEHUB_API_TOKEN = getpass()
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = HUGGINGFACEHUB_API_TOKEN
+# Load environment variables from .env file
+load_dotenv()
+HUGGINGFACEHUB_API_TOKEN = os.environ["HUGGINGFACEHUB_API_TOKEN"]
 llm = HuggingFaceEndpoint(repo_id='meta-llama/Llama-2-7b-chat-hf', max_length=256, temperature=0.5, token=HUGGINGFACEHUB_API_TOKEN)
 
 class FileIngestor:
