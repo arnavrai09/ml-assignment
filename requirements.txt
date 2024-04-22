@@ -1,5 +1,9 @@
-altair
-numpy
-pandas
-pydeck
+# Core
 streamlit
+langchain
+blosc2
+streamlit_chat
+pymupdf
+sentence-transformers
+faiss-cpu==1.7.4
+llama-cpp-python
